@@ -11,6 +11,7 @@ header {
   padding: 10px;
   min-height: 220px;
 }
+
 .header-container {
   display: flex;
   justify-content: space-around;
@@ -193,12 +194,348 @@ header {
 .featured .boxes {
   display: grid;
   grid-gap: 10px;
-  grid-template-columns: repeat(3, minmax(110px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
 }
 .featured .boxes .box {
   text-align: center;
   background-color: rgba(255, 255, 255, 0.15);
   margin-top: 10px;
   color: #fff;
-  padding: 3px;
+  padding: 2px;
+}
+.products {
+  margin: 50px 0;
+}
+.products .container {
+  display: block;
+  margin: 0 auto;
+}
+.products .container .title {
+  font-weight: 900;
+  font-size: 24px;
+  text-align: center;
+  margin-top: 40px;
+}
+.products .container .models {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  color: #727274;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 18px;
+  margin: 40px 20px;
+}
+.products .container .models li {
+  padding: 8px 10px;
+}
+.products .container .models li.active {
+  border-bottom: 2px solid #fa2a2a;
+}
+
+.products .container .boxes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+
+  gap: 10px;
+}
+.products .container .boxes .box {
+  /* margin: 20px; */
+  padding: 10px;
+  box-shadow: 0 2px 1.25rem 0 rgba(0, 0, 0, 0.1);
+  margin: auto;
+  padding: 15px;
+  color: #727274;
+  border-radius: 1px;
+  position: relative;
+}
+
+.products .container .boxes .box .top {
+  text-align: center;
+}
+
+.products .container .boxes .box .top img {
+  min-height: 90px;
+  margin-bottom: 20px;
+  width: 300px;
+}
+
+.products .container .boxes .box .top p {
+  color: #5c5c5c;
+  margin: 0;
+}
+.products .container .boxes .box .top h4 {
+  font-size: 20px;
+  margin: 10px 0;
+  color: #000;
+  font-weight: 800;
+}
+.products .container .boxes .box .top a {
+  color: rgb(59, 59, 228);
+  cursor: pointer;
+}
+.products .container .boxes .box .new {
+  position: absolute;
+  top: 3%;
+  left: 3%;
+  font-size: 0.75rem;
+  color: #fff !important;
+  background-color: #962afa;
+  padding: 4px;
+  border-radius: 2px;
+}
+.products .container .boxes .box .middle {
+  margin-top: 15px;
+}
+.products .container .boxes .box .middle .list {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.products .container .boxes .box .middle .list img {
+  margin-right: 8px;
+}
+.products .container .boxes .box .middle .list p {
+  margin: 10px 0;
+}
+.products .container .boxes .box .bottom {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.products .container .boxes .box .bottom p {
+  color: #969393;
+}
+.products .container .boxes .box .bottom p,
+.products .container .boxes .box .bottom h4 {
+  margin: 5px 0;
+}
+.products .container .boxes .box .bottom .price-flex {
+  display: flex;
+  align-items: center;
+  font-weight: 900;
+  color: #000;
+}
+.products .container .boxes .box .bottom .buy-btn {
+  padding: 0.625rem;
+  background-color: #fee9e9;
+  color: #fa2a2a;
+  border: none;
+  border-radius: 3.125rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+.contact-form {
+  background: linear-gradient(to left bottom, black, rgb(48, 46, 46));
+  color: #fff;
+}
+.contact-form .container .flex .text-content .text-container {
+  padding: 20px;
+  text-align: center;
+}
+.contact-form .container .flex .text-content .text-container p {
+  color: #a72725;
+}
+.contact-form .container .flex .text-content img {
+  display: block;
+  margin: 0 auto;
+  max-width: 350px;
+}
+
+.contact-form .container .flex .form-container {
+  display: block;
+  margin: 10px auto;
+  background-color: #011f05;
+  min-height: 300px;
+  padding: 30px 0;
+  width: 350px;
+}
+.contact-form .container .flex .form-container .form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3.125rem;
+  gap: 1.25rem;
+}
+form input,
+form textarea {
+  position: relative;
+  min-width: 230px;
+  padding: 1.25rem;
+  width: 150px;
+  background-color: #26402a;
+  border: 2px solid #5c6f5f;
+  color: #fff;
+  resize: none;
+  margin: auto;
+  display: block;
+}
+form input[required] + label,
+form textarea[required] + label {
+  cursor: text;
+  color: #999;
+  font-family: Arial;
+  font-size: 0.9em;
+  position: relative;
+  left: 55px;
+  top: -40px;
+  z-index: 1;
+}
+form textarea[required] + label[for="msg"] {
+  top: -110px;
+}
+form input[required] + label:after,
+form textarea[required] + label:after {
+  content: " *";
+  color: red;
+}
+form input[required]:invalid + label,
+form textarea[required] + label {
+  visibility: visible;
+}
+form input[required]:valid + label,
+form input[required]:focus + label,
+form textarea[required]:focus + label[for="msg"],
+form textarea[required]:valid + label[for="msg"] {
+  visibility: hidden;
+}
+#msg {
+  min-height: 80px;
+}
+.submit-btn {
+  padding: 1.25rem 1.563rem;
+  border: 2px solid #5c6f5f;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  margin: 10px auto;
+}
+.footer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: #a7a7a8;
+}
+.footer .footer-links {
+  display: flex;
+  align-items: center;
+  gap: 1.875rem;
+}
+.footer ul {
+  padding-left: 0;
+}
+.footer .footer-links li {
+  list-style: none;
+}
+.footer .footer-links a {
+  color: #a7a7a8;
+  text-decoration: none;
+}
+.footer .footer-links a:hover {
+  color: #fff;
+}
+
+.modal-container {
+  display: none;
+}
+.modal-container .overlay {
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  margin: auto;
+}
+
+.modal-container .overlay .modal-content {
+  position: relative;
+  margin: 0 auto;
+  background-color: #fff;
+  width: 85%;
+  margin-top: 10%;
+}
+.modal-container .overlay .modal-content .product {
+  padding: 20px;
+  background-color: #f1f1f5;
+}
+.modal-container .overlay .modal-content .product .box {
+  text-align: center;
+}
+.modal-container .overlay .modal-content .product .box .top p {
+  color: #727274;
+}
+.modal-container .overlay .modal-content .product .box .top h4 {
+  color: #000;
+  font-weight: 900;
+  font-size: 22px;
+  margin: 10px 0;
+}
+.modal-container .overlay .modal-content .product .box .bottom .black-btn {
+  margin-top: 30px;
+  background-color: #212121;
+  color: #727274;
+  padding: 10px 50px;
+  border-radius: 1.25rem;
+  cursor: pointer;
+}
+
+.modal-container .overlay .modal-content .product .box .bottom .black-btn p {
+  color: #fff;
+  font-size: 22px;
+  margin: 10px 0 0 0;
+}
+.configurator-info {
+  background-color: #fefefe;
+  padding: 10px 5px;
+}
+.close-btn {
+  position: absolute;
+  cursor: pointer;
+  top: -1.563rem;
+  right: -1.563rem;
+  width: 3.125rem;
+  height: 3.125rem;
+  color: #fff;
+  font-size: 1.25rem;
+  border: none;
+  background: black;
+  border-radius: 3.125rem;
+}
+
+.configurator-info .title {
+  text-align: center;
+  margin: 10px 0;
+  font-size: 20px;
+  font-weight: 900;
+}
+.configurator-info .subtitle {
+  text-align: center;
+  color: #727272;
+  margin: 10px 0;
+}
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #dbd4d4;
+}
+.checkboxes div:last-child {
+  border-bottom: none;
+}
+.checkbox-item .info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex: 1;
+}
+.checkbox-item input {
+  margin-right: 10px;
 }
